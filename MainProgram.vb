@@ -52,7 +52,7 @@ Function getBalFilename(code As String) As String
     getBalFilename = code & "_BAL_" & "_" & period_form.year & "_" & period_form.month & ".xlsx"
 End Function
 
-Function copyTemplate(line As Integer, balTemplate As String, balRoot As String) 
+Function copyTemplate(line As Integer, balTemplate As String, balRoot As String) As String
 
     Dim balFilename As String
     Dim balDirectory As String
@@ -75,6 +75,8 @@ Function copyTemplate(line As Integer, balTemplate As String, balRoot As String)
     balFilename = balDirectory & "\" & balFilename
     
     FileCopy balTemplate, balFilename
+	
+	copyTemplate = balFilename
 
 End Function
 
